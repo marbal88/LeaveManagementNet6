@@ -4,6 +4,7 @@ using LeaveManagement.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveManagement.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220918173005_AddedLeaveRequestTable")]
+    partial class AddedLeaveRequestTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +108,7 @@ namespace LeaveManagement.Web.Data.Migrations
                         {
                             Id = "408aa945-3d84-4421-8342-7269ec64d949",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "07caa355-5e9e-4a2d-848a-84185dc82575",
+                            ConcurrencyStamp = "8822c616-deb6-4e40-95ef-513d020c4f47",
                             DateJoined = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@localhost.com",
@@ -116,9 +118,9 @@ namespace LeaveManagement.Web.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOolJhcIjGoO+1EldK/OZnnAAcP8D7m1p2HWO07xdh3ixYcZJz7TTAeYn0VPvXHBEQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMJGBRs1Msm7yBAxk3kVjUm1gAHy0OiwCF+KlYduwwGhWWWZGx/XWsV1fhR+Ur+Mlw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "44088ea9-900e-4325-b5ba-403bfdb57f13",
+                            SecurityStamp = "e3bdc8e4-56ab-4da0-913a-ec6129eaed56",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost.com"
                         },
@@ -126,7 +128,7 @@ namespace LeaveManagement.Web.Data.Migrations
                         {
                             Id = "408bb945-3d85-4422-8343-7269fd64d940",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2c8cd424-07bd-4d48-a674-8249035850e2",
+                            ConcurrencyStamp = "b1095ddb-8a42-4fb5-b19d-06747c6fd3b6",
                             DateJoined = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user@localhost.com",
@@ -136,9 +138,9 @@ namespace LeaveManagement.Web.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMlDptE7Z6VWZpoG5gl1TJfnRaqepheIhz9lz28U7O0DVQC4nOu4uJ856CdbE7xBUw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIq+YuEoQ9g1Sq8YqiBglq8ovLuoSsQLwzIGD7fT1WQ8h5ib4NqbjG/osItFByYN9g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e6c0029d-3284-4370-8d47-d4d90535cd54",
+                            SecurityStamp = "70904b89-04b2-4706-8e03-8a2a98bd8cdd",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost.com"
                         });
@@ -208,6 +210,7 @@ namespace LeaveManagement.Web.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("RequestComments")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RequestingEmployeeId")
@@ -280,14 +283,14 @@ namespace LeaveManagement.Web.Data.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
-                            ConcurrencyStamp = "803cf164-f797-407f-87d5-0d3a9fdca9cf",
+                            ConcurrencyStamp = "49311120-bb24-4cb0-8536-1a27b71af63c",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "cac43a7e-f7cb-4448-baaf-1acb431eabbf",
-                            ConcurrencyStamp = "784c0ffa-825a-444e-977b-dedbc9b7ef74",
+                            ConcurrencyStamp = "f0e2ce8d-f35f-40e5-8797-c0cdfb03900d",
                             Name = "User",
                             NormalizedName = "USER"
                         });
